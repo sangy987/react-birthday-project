@@ -1,10 +1,19 @@
 import React from 'react'
 
-const List = () => {
+
+
+const List = (props) => {
+	const { people } = props
 	return (
-		<>
-			<h2>list component</h2>
-		</>
+		people.map(people => (
+			<article class="person">
+				<img src={people.image} alt={people.name} />
+				<div>
+					<h4>{people.name}</h4>
+					<p>{people.age}</p>
+				</div>
+			</article>
+		))
 	)
 }
 
